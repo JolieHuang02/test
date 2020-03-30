@@ -1,0 +1,161 @@
+$color-grey: #f1f3f4
+$color-blue: #B0D5D9
+$color-bright-blue: #26BEC9
+$font-color: #323232
+@mixin middle()
+    position: relative
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+
+// *
+//     border: 1px solid
+    
+.header
+    background-color: white
+    box-shadow: 0px 2px 1px 1px $color-grey
+    .container
+        padding-top: 5px 
+        padding-bottom: 10px 
+        a.logo
+            margin: 0px 0px
+            background-image: url("../img/kaohsiung.jpeg")
+            background-size: contain
+            background-repeat: no-repeat
+            height: 60px
+        ul.nav
+            li.nav-item
+                a.nav-link
+                    height: 100%
+                    color: $font-color
+                a.active
+                    color: $color-bright-blue
+
+.formContent
+    background-image: url("../img/bn.jpg")
+    background-size: cover
+    height: 300px
+    .container
+        height: 100%
+        .form
+            position: relative
+            top: 50%
+            transform: translate(0%,-50%)
+            h3,h5
+                color: white
+                text-shadow: 3px 3px 3px #B6CCCF
+                letter-spacing: 1px
+            .zoneSelectform
+                label
+                    color: $font-color
+                    font-size: 1em
+.hotContent
+    background-color: $color-grey
+    height: auto
+    .container
+        height: 100%
+        padding-top: 5px 
+        padding-bottom: 20px 
+
+        h5
+            margin: 10px 0px
+        ul
+            padding: 0px
+            margin: 0px
+        ul>li
+            padding: 0px
+            list-style: none
+            height: 150px
+            text-align: center
+            border-radius: 5px
+            transition-duration: 1s
+            a
+                text-decoration: none
+                display: block
+                position: relative
+                top: 50%
+                transform: translate(0px,-50%) 
+                color: white
+                text-shadow: 0px 1px 2px #B6CCCF
+                font-size: 24px
+        ul>li#hotItem1
+            background-image: url("../img/苓雅zone.jpeg")
+            background-size: cover
+            opacity: 0.9
+        ul>li#hotItem2
+            background-image: url("../img/三民zone.jpeg")
+            background-size: cover
+            opacity: 0.9
+        ul>li#hotItem3
+            background-image: url("../img/新興zone.jpeg")
+            background-size: cover
+            opacity: 0.9
+        ul>li#hotItem4
+            background-image: url("../img/美濃zone.jpeg")
+            background-size: cover
+            opacity: 0.9
+.mainContent
+    .container
+        padding-top: 20px 
+        padding-bottom: 20px 
+        #dataContainer
+            .dataBlock
+                height: auto
+                padding: 20px 10px 
+                .cardBlock
+                    height: 100%
+                    border-radius: 10px
+                    border: 2px solid $color-grey
+                    transition-duration: 1s
+                    cursor: pointer
+                    .image
+                        width: 100%
+                        overflow: hidden
+                        height: 233px
+                        border-radius: 10px 10px 0px 0px
+                        img
+                            width: 100%
+                            transform-origin: 50% 50%
+                            transition-duration: 1s
+                    &:hover
+                        opacity: 0.8
+                        img
+                           transform: scale(1.2)
+                    .text
+                        padding: 10px 
+                        h5 
+                            letter-spacing: 2px
+                        h6
+                            color: $font-color
+                            opacity: 0.6
+                        
+                    
+
+                
+            // .card
+            //     &:hover
+            //             #card-text
+            //                 opacity: 1
+            //             img
+            //                 width: 110%
+            //                 height: 110%
+
+            //     .card-img-overlay
+            //         padding: 0
+                                  
+            //     #card-text
+            //         width: 100%
+            //         height: auto
+            //         padding: 10px
+            //         background-color: rgba(23,24,36,0.5)
+            //         transition-duration: 0.5s
+            //         opacity: 0
+                    
+
+
+                              
+            
+
+
+
+       
