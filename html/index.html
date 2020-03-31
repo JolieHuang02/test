@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>高雄旅遊網</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
@@ -13,13 +13,32 @@
 </head>
 
 <body>
+    <ul class="nav flex-column" id="slidemenu">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">首頁</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">幫助中心</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">關於我們</a>
+        </li>
+    </ul>
+    <div class="block" id="closeMenu"></div>
     <div class="header">
         <div class="container">
-            <div class="row align-items-center justify-content-xl-between">
-                <a href="" class="logo col-xl-2 offset-xl-1">
+            <div class="row align-items-center justify-content-between">
+                <a href="" class="logo col-2">
                     <!-- <img src="../img/kaohsiung.jpeg" alt=""> -->
                 </a>
-                <ul class="nav col-xl-4 ">
+                <block class="col-2 " id="slideBtn">
+                    <div class="row flex-column flex justify-content-center align-items-center">
+                        <div class="block block1"></div>
+                        <div class="block block2"></div>
+                        <div class="block block3"></div>
+                    </div>
+                </block>
+                <ul class="nav col-auto " id="menu">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">首頁</a>
                     </li>
@@ -52,16 +71,17 @@
         <div class="container">
             <h5>探索熱門區域</h5>
             <ul class="row justify-content-around align-items-center" id="hotItems">
-                <li class="col-2" id="hotItem1">
+                <li class="col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 " id="hotItem1">
                     <a href="#">苓雅區</a>
                 </li>
-                <li class="col-2" id="hotItem2">
+                <li class="col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 " id="hotItem2">
                     <a href="#">三民區</a>
                 </li>
-                <li class="col-2" id="hotItem3">
+                <!-- <div class="d-xl-none d-lg-none d-md-none d-sm-none d-block w-100"></div> -->
+                <li class="col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 " id="hotItem3">
                     <a href="#">新興區</a>
                 </li>
-                <li class="col-2 " id="hotItem4">
+                <li class="col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 " id="hotItem4">
                     <a href="#">美濃區</a>
                 </li>
             </ul>

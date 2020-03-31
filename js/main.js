@@ -4,13 +4,29 @@ const selectHotItems = document.querySelector("#hotItems");
 const page = document.querySelector("#pageContainer");
 const dataBlock = document.querySelector("#dataContainer");
 const zoneTitle = document.querySelector("#zoneTitle");
+const slideBtn = document.querySelector("#slideBtn");
+const slideMenu = document.querySelector("#slidemenu");
+
+slideBtn.addEventListener("click", function(e) {
+    slideMenu.style.display = "block";
+    slideMenu.style.display = "block";
+    document.querySelector("#closeMenu").style.display = "block";
+});
+
+document.querySelector("#closeMenu").addEventListener("click", function(e) {
+    console.log(e.target);
+    if (e.target !== slideMenu) {
+        slideMenu.style.display = "none";
+        document.querySelector("#closeMenu").style.display = "none";
+    }
+});
 
 selectZone.addEventListener("change", changeZone); //用change不是click
 page.addEventListener("click", clickPage);
 selectHotItems.addEventListener("click", clickHotZone);
 selectHotItems.addEventListener("mouseover", function(e) {
     if (e.target.nodeName == "LI") {
-        e.target.setAttribute("class", "col-3");
+        e.target.setAttribute("class", "col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3");
     } else if (e.target.nodeName == "A") {
         //Ａ的父元素，指的是LI
         e.target.parentElement.setAttribute("class", "col-3");
@@ -22,7 +38,7 @@ selectHotItems.addEventListener("mouseout", function(e) {
     if (e.target.nodeName == "LI") {
         e.target.setAttribute("class", "col-2");
     } else if (e.target.nodeName == "A") {
-        e.target.parentElement.setAttribute("class", "col-2");
+        e.target.parentElement.setAttribute("class", "col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 ");
     }
 
 });
@@ -168,7 +184,7 @@ function dataHtml(parameter) {
     // console.log(parameter);
     for (let i = 0; i < parameter.length; i++) {
         str += `
-            <div class="dataBlock col-4">
+            <div class="dataBlock col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="cardBlock">
                     <div class="image">
                         <img src="${parameter[i].Picture1}" alt="">
@@ -211,20 +227,24 @@ function pageBtn(parameter) {
     }
     //顯示出此區域所需的總頁數
     for (let i = 1; i <= totalPage; i++) {
+        let width = 960;
         //是當前頁面時，li會加上active
-        if (Number(parameter.currentPage) === i) {
-            str += `
-            <li class="page-item active">
-                <a class="page-link" href="#" data-pages="${i}">${i}</a>
-            </li>
-            `;
-        } else {
-            str += `
-			<li class="page-item">
-				<a class="page-link" href="#" data-pages="${i}">${i}</a>
-			</li>
-			`;
+        if (document.body.clientWidth > width) {
+            if (Number(parameter.currentPage) === i) {
+                str += `
+                <li class="page-item active">
+                    <a class="page-link" href="#" data-pages="${i}">${i}</a>
+                </li>
+                `;
+            } else {
+                str += `
+                <li class="page-item">
+                    <a class="page-link" href="#" data-pages="${i}">${i}</a>
+                </li>
+                `;
+            }
         }
+
     }
     //
     if (parameter.next) {
